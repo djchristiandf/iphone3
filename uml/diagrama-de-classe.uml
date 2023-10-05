@@ -1,0 +1,67 @@
+@startuml
+class ReprodutorMusical {
+  - musicaAtual: String
+  - emReproducao: boolean
+
+  + ReprodutorMusical()
+  + tocar(): void
+  + pausar(): void
+  + selecionarMusica(musica: String): void
+  + gerarListaMusicas(): void
+  + selecionarAlbum(album: String): void
+  + selecionarCantor(cantor: String): void
+}
+
+class AparelhoTelefonico {
+  - ligado: boolean
+  - chamadaAtiva: boolean
+
+  + AparelhoTelefonico()
+  + ligar(): void
+  + atender(): void
+  + iniciarCorreioVoz(): void
+  + gerarListaContatos(): void
+  + escolherIndividuo(individuo: String): void
+}
+
+class NavegadorInternet {
+  - paginaAtual: String
+
+  + NavegadorInternet()
+  + exibirPagina(pagina: String): void
+  + adicionarNovaAba(pagina: String): void
+  + atualizarPagina(): void
+  + gerarListaPaginas(): void
+  + selecionarPagina(pagina: String): void
+}
+
+interface ReprodutorMusicalInterface {
+  + tocar(): void
+  + pausar(): void
+  + selecionarMusica(musica: String): void
+  + gerarListaMusicas(): void
+  + selecionarAlbum(album: String): void
+  + selecionarCantor(cantor: String): void
+}
+
+interface AparelhoTelefonicoInterface {
+  + ligar(): void
+  + atender(): void
+  + iniciarCorreioVoz(): void
+  + gerarListaContatos(): void
+  + escolherIndividuo(individuo: String): void
+}
+
+interface NavegadorInternetInterface {
+  + exibirPagina(pagina: String): void
+  + adicionarNovaAba(pagina: String): void
+  + atualizarPagina(): void
+  + gerarListaPaginas(): void
+  + selecionarPagina(pagina: String): void
+}
+
+ReprodutorMusicalInterface <|.. ReprodutorMusical
+AparelhoTelefonicoInterface <|.. AparelhoTelefonico
+NavegadorInternetInterface <|.. NavegadorInternet
+
+@enduml
